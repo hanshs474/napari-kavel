@@ -1,0 +1,10 @@
+name: napari-kavel
+display_name: Kavel AI Image
+contributions:
+  commands:
+    - id: napari-kavel.generate_image
+      python_name: napari_kavel._widget:generate_image
+      title: Generate an AI image with Kavel
+  widgets:
+    - command: napari-kavel.generate_image
+      display_name: Kavel AI image

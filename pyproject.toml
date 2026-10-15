@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "napari-kavel"
+version = "1.0.0"
+description = "Generate an AI image from a prompt with Kavel and add it to napari as an image layer. Free tier, no API key needed."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Kavel", email = "support@kavel.ai" }]
+keywords = ["napari", "ai", "image-generation", "text-to-image", "kavel"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Framework :: napari",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Graphics",
+]
+dependencies = ["kavel>=0.2", "numpy", "imageio>=2.28", "magicgui"]
+
+[project.urls]
+Homepage = "https://www.kavel.ai/?utm_source=napari&utm_medium=package"
+Source = "https://github.com/hanshs474/napari-kavel"
+"Bug Tracker" = "https://github.com/hanshs474/napari-kavel/issues"
+
+[project.entry-points."napari.manifest"]
+napari-kavel = "napari_kavel:napari.yaml"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+napari_kavel = ["napari.yaml"]
